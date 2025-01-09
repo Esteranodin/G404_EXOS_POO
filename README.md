@@ -44,9 +44,9 @@
 - Enchaîner les méthodes `drive()`, `shiftGear()` et encore `drive()`. Cette dernière fonction doit afficher un nombre supérieur pour montrer le passage de vitesse.
 
 ### Exercice 2 - Héritage
-- Créer un fichier animaux.php
+- Créer les fichiers Animal.php, Mammifere.php, Chien.php
 - Créer une classe Animal qui contient la méthode `info()`. Cette méthode echo "je suis un animal".
-- Créer une classe Mammifère qui hérite de la classe Animal et qui contient la méthode `infoPlus()` qui echo "je suis un mammifère".
+- Créer une classe Mammifere qui hérite de la classe Animal et qui contient la méthode `infoPlus()` qui echo "je suis un mammifère".
 - Créer une classe Chien qui hérite de la classe Mammifere et qui contient la méthode `crie()` qui echo "j'aboie".
 - Créer un nouveau Chien et utiliser toutes les méthodes de sa classe.
 
@@ -56,7 +56,7 @@
 
 ## ☕ Mini TP : nous allons construire une machine à café !
 
-### Créer un fichier cafe.php
+### Créer un fichier MachineACafe.php
 - Créer la classe MachineACafe
   - La machine doit avoir au minimum 3 attributs privés et 3 fonctions publiques :
     - Les attributs : `marque`, `cafe`, `enFonction`.
