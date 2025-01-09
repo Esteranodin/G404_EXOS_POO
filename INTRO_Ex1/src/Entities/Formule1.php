@@ -12,7 +12,7 @@ class Formule1
   {
     echo "Vroom vroom à $this->speed km/h <br>";
     return $this;
-    // a corriger la fonction en doit que retourner et c'est la page concernée qui doit afficher ici homepage
+    // a corriger car la fonction ne doit que retourner et c'est la page concernée qui doit afficher (ici homepage)
   }
 
   public function getSpeed()
