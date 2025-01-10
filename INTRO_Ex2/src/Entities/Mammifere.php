@@ -1,17 +1,12 @@
 <?php
 
+abstract class Mammifere extends Animal {
 
-abstract class Mammifere extends Animal
-{
- 
+    protected int $nombrePatte;
+
+  
     public function infoPlus(): string
     {
-
-        return  "Je suis un mammifère <br>";
+        return "je suis un mammifère";
     }
-
-
-
-    
-
 }

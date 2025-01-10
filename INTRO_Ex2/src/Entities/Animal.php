@@ -4,9 +4,9 @@ abstract class Animal
 {
 
     // Propriétés
-    private int $weight;
-    private int $heigh;
-    private bool $isCute;
+    protected int $weight;
+    protected int $heigh;
+    protected bool $isCute;
 
     // Méthode 
     public function info(): string
