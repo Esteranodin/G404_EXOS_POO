@@ -1,6 +1,6 @@
 <?php
 
-class Chien extends Mammifere
+final class Chien extends Mammifere
 {
 
     public function crie(): string
