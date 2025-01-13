@@ -1,0 +1,111 @@
+<!-- INDEX.PHP -->
+
+<?php
+include_once './Entities/Book.php';
+include_once './Entities/Category.php';
+
+$book = new Book("Harry Potter");
+
+$category1 = new Category("Aventure");
+$category2 = new Category("Fantasy");
+
+$book->addCategory($category1)->addCategory($category2);
+
+$book->removeCategory($category1);
+// $book->addCategory($category2);
+
+var_dump($book);
+
+
+// $categories = [
+//     $category1,
+//     $category2,
+// ];
+
+// $book->setCategories($categories);
+// var_dump($book->getCategories());
+
+
+// echo $book->getCategories()[0]->getName();
+
+?>
+
+<!-- BOOK.PHP -->
+
+<?php
+
+final class Book
+{
+    private string $title;
+    private array $categories;
+
+    public function __construct(string $title)
+    {
+        $this->title = $title;
+        $this->categories = [];
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function getCategories(): array
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(array $categories): self
+    {
+        foreach ($categories as $category) {
+            if (!$category instanceof Category) {
+                throw new Exception("Il faut que le tableau soit composé de Category uniquement");
+            }
+        }
+
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        $this->categories[] = $category;
+        return $this;
+    }
+
+    public function removeCategory(Category $removeCategory)
+    {
+        foreach ($this->categories as $key => $bookCategory) {
+            if ($bookCategory === $removeCategory) {
+                unset($this->categories[$key]);
+            }
+        }
+
+        // Puis on ré-index le tableau
+        $this->categories = array_values($this->categories);
+    }
+}
+
+?>
+
+<!-- CATEGORY.PHP -->
+
+<?php
+
+final class Category
+{
+    private string $name;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+}
+
+?>
