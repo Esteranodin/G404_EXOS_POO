@@ -7,7 +7,7 @@ onOff.addEventListener("click", handleOnOff);
 function handleOnOff() {
     onOff.classList.add("onOff");
     liquid.classList.add("coffeeLiquid");
-
+// c'est ici qu'on peut faire une requête ! on peut faire une méthode post en JS
     smokes.forEach(smoke => {
         smoke.classList.add("coffeeSmoke");
     });
