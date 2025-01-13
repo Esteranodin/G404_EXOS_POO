@@ -9,7 +9,7 @@ class MachineACafe
     protected int $sucre;
 
     // Méthode magique
-    public function __construct(string $marque)
+    public function __construct(string $marque = "La machine a café") // le constructor permet entre autre de donner des valeurs par défaut + si on précise une valeur ici, elle sera prise par défaut si la personne ne met rien en paramètre lors de l'instance
     {
         $this->marque = $marque;
         $this->enFonction = false;
@@ -19,9 +19,9 @@ class MachineACafe
 
 
     // Méthodes 
-    public function allumage(): void
+    public function allumage()
     {
-        $this->enFonction = !$this->enFonction;
+        $this->enFonction = !$this->enFonction; // permet de faire un bouton on/off = un état en lui donnant comme valeur l'inverse de ce qu'il était + ne marche qu'avec true/false 
 
         // if ($this->enFonction) {
         //     return "La machine $this->marque est en fonction. <br> ";
@@ -30,7 +30,7 @@ class MachineACafe
         // }
     }
 
-    public function mettreUneDosette(int $cafe): void
+    public function mettreUneDosette(int $cafe)
     {
         $this->cafe = $cafe;
 
@@ -45,7 +45,7 @@ class MachineACafe
      *  Focntion qui permet de faire du café avec en paramètre le nombre de morceau(x) de sucre
      */
 
-    public function faireDuCafe(int $sucre)
+    public function faireDuCafe(int $sucre) : string
     {
         $this->sucre = $sucre;
 
@@ -66,11 +66,11 @@ class MachineACafe
         } else {
             return "La machine n'est pas allumée et il n'y a pas de café...";
         }
-
-       
     }
 }
 
+// quand il commence a y avoir trop de conditions a tester, c'est mieux et plus court de tester l'inverse ! par exemple 
+// if (!$this->enFonction){return "La machine est éteinte"}
 
 // if ($this->enFonction === false && $this->cafe > 0) {
 //     return $this->mettreUneDosette($this->cafe);

@@ -4,7 +4,6 @@ include_once '../utils/autoloader.php';
 
 $machine = new MachineACafe("De'longhi");
 
-
 $machine->allumage();
 $machine->mettreUneDosette(2);
 
